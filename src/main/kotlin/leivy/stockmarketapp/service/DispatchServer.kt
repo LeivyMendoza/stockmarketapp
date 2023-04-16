@@ -1,12 +1,13 @@
 package leivy.stockmarketapp.service
 
 import org.springframework.stereotype.Service
-import yahoofinance.YahooFinance
-import arrow.core.Either
-import java.math.BigDecimal
-import java.net.UnknownHostException
+import org.springframework.kafka.core.KafkaTemplate;
 
 @Service
-class DispatchServer {
-
+abstract class DispatchServer {
+    abstract val kafkaTemplate: KafkaTemplate<String, String>
+    class DispatchServer(val kafkaTemplate: KafkaTemplate<String, String>)
+    fun publish(data: String): Unit {
+        kafkaTemplate.send("stock-market-data", data)
+    }
 }
