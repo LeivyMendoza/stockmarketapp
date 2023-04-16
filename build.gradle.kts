@@ -30,6 +30,8 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	implementation("org.springframework.cloud:spring-cloud-config-server")
+	implementation("com.yahoofinance-api:YahooFinanceAPI:3.17.0")
+	implementation("io.arrow-kt:arrow-core:1.1.2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
 }
